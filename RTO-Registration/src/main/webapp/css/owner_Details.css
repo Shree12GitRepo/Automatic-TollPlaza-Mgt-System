@@ -1,0 +1,8 @@
+.form-inline{
+	display:table-row-group;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: none;
+}
