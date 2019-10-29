@@ -12,11 +12,13 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script
+<script>
 	src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/css/owner_Details.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script>
 	$(function() {
 		$("#datepicker").datepicker();
@@ -28,65 +30,52 @@
 <body>
 
 	<div class="text-center bg-primary text-white " style="height: 50px;">
-		<label style="margin-top: 1%;"><span><i class="fa fa-male ownr_dtls" aria-hidden="true" style="font-size: 30px;"></i></span>Veichle Owner Details</label>
+		<label style="margin-top: 1%;"><span><i
+				class="fa fa-motorcycle" aria-hidden="true" style="font-size: 30px;"></i></span>Owner Address Details</label>
 	</div>
 	<div class="d-flex justify-content-center mt-4 table-responsive">
 
-		<form:form action="/vchlDetails" modelAttribute="VchlownrDetls"
+		<form:form action="/ownrAddrs/${OwnerID}" modelAttribute="ownrAddrsReg"
 			method="POST">
 			<table class="table table-condensed">
 
-				<tr class="form-inline">
-					<td><label for="text">First Name</label></td>
 
-					<td><form:input path="owner_Fname" type="text"
-							class="form-control" id="fname" /></td>
-
-				</tr>
 				<tr class="form-inline">
-					<td><label for="text">Last Name</label></td>
-					<td><form:input path="owner_Lname" type="text"
-							class="form-control" id="lname" /></td>
-				</tr>
-				<tr class="form-inline">
-					<td><label for="mail">Email address</label></td>
-					<td><form:input path="owner_email" type="email"
-							class="form-control" id="vchl_Ownr_Mail" /></td>
+					<td><label for="mail">Enter Your House No</label></td>
+					<td>
+						<form:input path="house_no" type="text"
+							class="form-control" id="fname" />
+					</td>
 
 				</tr>
 				<tr class="form-inline">
-					<td><label for="DOB">Date Of Birth</label></td>
-					<td><form:input path="owner_DOB" type="text" id="datepicker"
-							class="form-control" /></td>
+					<td><label for="mail">Enter SSN NO</label></td>
+					<td>
+						<form:input path="ssn_no" type="text"
+							class="form-control" id="fname" />
+					</td>
+
 				</tr>
 				<tr class="form-inline">
-					<td><label for="MOB">MOB</label></td>
-					<td><form:input path="owner_Mob" type="mob"
+					<td><label for="mail">Enter ZIP Code</label></td>
+					<td>
+						<form:input path="zip_code" type="text"
+							class="form-control" id="fname" />
+					</td>
+
+				</tr>
+				<tr class="form-inline">
+					<td><label for="VNP">Enter City</label></td>
+					<td><form:input path="city" type="text"
 							class="form-control" id="owner_mob_no" /></td>
 				</tr>
-				<tr class="form-inline">
-					<td><label for="text">Gender</label></td>
-					<td>
-						<div class="custom-control custom-radio custom-control-inline">
-							<form:radiobutton path="owner_Gender" value="Male"
-								id="customRadioInline1" name="customRadioInline1"
-								class="custom-control-input" />
-							<label class="custom-control-label" for="customRadioInline1">Male</label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<form:radiobutton path="owner_Gender" value="Female"
-								id="customRadioInline2" name="customRadioInline1"
-								class="custom-control-input" />
-							<label class="custom-control-label" for="customRadioInline2">Female</label>
-						</div>
-					</td>
-					
-				</tr>
+				
 
 				<tr>
 					<td><button type="submit" class="btn btn-primary"
+							id="prev_btn"><a href="#" style="color:#fff;">PREV</a></button></td>
+					<td><button type="submit" class="btn btn-primary"
 							id="next_btn">NEXT</button></td>
-					<td></td>
 				</tr>
 			</table>
 

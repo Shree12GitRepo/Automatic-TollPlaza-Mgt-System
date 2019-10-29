@@ -4,5 +4,6 @@ import com.USA.RTO.BO.VeichleOwnerRegstrtnBO;
 
 
 public interface VeichleOwnerRegstrtnService {
-	public void insert_vchlOwnr_Details(VeichleOwnerRegstrtnBO bo);
+	public int insert_vchlOwnr_Details(VeichleOwnerRegstrtnBO bo);
+	public VeichleOwnerRegstrtnBO getOwnrDetailsByID(Integer ownerID);
 }

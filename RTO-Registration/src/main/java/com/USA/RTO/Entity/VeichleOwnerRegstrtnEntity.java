@@ -5,12 +5,17 @@ package com.USA.RTO.Entity;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,8 +25,10 @@ import org.hibernate.annotations.CreationTimestamp;
 @Table(name="vchl_ownr_dtls")
 public class VeichleOwnerRegstrtnEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "vchl_ownrSeq")
+	@SequenceGenerator(sequenceName = "ownr_seq",allocationSize = 1,name = "vchl_ownrSeq")
 	private int vchl_ownrID;
+	
 	@Column(name = "OWNR_FNAME", length = 10)
 	private String owner_Fname;
 	@Column(name = "OWNR_LNAME", length = 8)
@@ -87,8 +94,6 @@ public class VeichleOwnerRegstrtnEntity {
 	public void setOwnr_create_Date(LocalDateTime ownr_create_Date) {
 		this.ownr_create_Date = ownr_create_Date;
 	}
-	
-	
 	
 	
 }
